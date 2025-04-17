@@ -4,11 +4,24 @@ project(Rooh)
 # Use C++17 standard
 set(CMAKE_CXX_STANDARD 17)
 
-# Include directories for libraries
-include_directories(external/glad/include)
-include_directories(external/glfw/include)
-include_directories(external/stb)
-include_directories(external/kissfft)
+# Include directories for external libraries
+include_directories(
+    external/glad
+    external/glfw/include
+    external/kissfft
+    external/stb
+)
+
+# Add the source files for each external library
+set(EXTERNAL_LIBS
+    external/glad/glad.c
+    external/kissfft/kiss_fft.c
+    external/stb/stb_vorbis.c
+)
+
+# Link libraries (link against OpenGL and GLFW)
+target_link_libraries(your_target_name PRIVATE glfw OpenGL)
+
 
 # Add executable
 add_executable(Rooh src/main.cpp external/glad/src/glad.c external/kissfft/kiss_fft.c)
