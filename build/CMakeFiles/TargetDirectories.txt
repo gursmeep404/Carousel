@@ -1,0 +1,3 @@
+/home/kali/Rooh/build/CMakeFiles/Rooh.dir
+/home/kali/Rooh/build/CMakeFiles/edit_cache.dir
+/home/kali/Rooh/build/CMakeFiles/rebuild_cache.dir
