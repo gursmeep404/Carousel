@@ -130,6 +130,7 @@ Rooh: CMakeFiles/Rooh.dir/build.make
 Rooh: CMakeFiles/Rooh.dir/compiler_depend.ts
 Rooh: /usr/lib/x86_64-linux-gnu/libGL.so
 Rooh: /usr/lib/x86_64-linux-gnu/libglfw.so.3.4
+Rooh: /usr/lib/x86_64-linux-gnu/libopenal.so
 Rooh: CMakeFiles/Rooh.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Rooh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Rooh.dir/link.txt --verbose=$(VERBOSE)

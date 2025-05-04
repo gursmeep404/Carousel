@@ -184,9 +184,9 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
  /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
- /usr/include/c++/14/bits/vector.tcc \
- /home/kali/Rooh/src/../external/stb/stb_vorbis.c /usr/include/assert.h \
- /usr/lib/gcc/x86_64-linux-gnu/14/include/limits.h \
+ /usr/include/c++/14/bits/vector.tcc /usr/include/AL/al.h \
+ /usr/include/AL/alc.h /home/kali/Rooh/src/../external/stb/stb_vorbis.c \
+ /usr/include/assert.h /usr/lib/gcc/x86_64-linux-gnu/14/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \

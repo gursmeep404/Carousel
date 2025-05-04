@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/kali/Rooh/external/glad -I/home/kali/Rooh/external/glfw/include -I/home/kali/Rooh/external/kissfft
+C_INCLUDES = -I/home/kali/Rooh/external/glad -I/home/kali/Rooh/glfw/include -I/home/kali/Rooh/external/kissfft -isystem /usr/include/AL
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/kali/Rooh/external/glad -I/home/kali/Rooh/external/glfw/include -I/home/kali/Rooh/external/kissfft
+CXX_INCLUDES = -I/home/kali/Rooh/external/glad -I/home/kali/Rooh/glfw/include -I/home/kali/Rooh/external/kissfft -isystem /usr/include/AL
 
 CXX_FLAGS = -std=gnu++17
 
