@@ -177,6 +177,30 @@ external/kissfft/kiss_fft.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.s
 .PHONY : external/kissfft/kiss_fft.c.s
 
+src/audio.o: src/audio.cpp.o
+.PHONY : src/audio.o
+
+# target to build an object file
+src/audio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/audio.cpp.o
+.PHONY : src/audio.cpp.o
+
+src/audio.i: src/audio.cpp.i
+.PHONY : src/audio.i
+
+# target to preprocess a source file
+src/audio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/audio.cpp.i
+.PHONY : src/audio.cpp.i
+
+src/audio.s: src/audio.cpp.s
+.PHONY : src/audio.s
+
+# target to generate assembly for a file
+src/audio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/audio.cpp.s
+.PHONY : src/audio.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -201,6 +225,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/renderer.o: src/renderer.cpp.o
+.PHONY : src/renderer.o
+
+# target to build an object file
+src/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/renderer.cpp.o
+.PHONY : src/renderer.cpp.o
+
+src/renderer.i: src/renderer.cpp.i
+.PHONY : src/renderer.i
+
+# target to preprocess a source file
+src/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/renderer.cpp.i
+.PHONY : src/renderer.cpp.i
+
+src/renderer.s: src/renderer.cpp.s
+.PHONY : src/renderer.s
+
+# target to generate assembly for a file
+src/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/renderer.cpp.s
+.PHONY : src/renderer.cpp.s
+
+src/shaders.o: src/shaders.cpp.o
+.PHONY : src/shaders.o
+
+# target to build an object file
+src/shaders.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/shaders.cpp.o
+.PHONY : src/shaders.cpp.o
+
+src/shaders.i: src/shaders.cpp.i
+.PHONY : src/shaders.i
+
+# target to preprocess a source file
+src/shaders.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/shaders.cpp.i
+.PHONY : src/shaders.cpp.i
+
+src/shaders.s: src/shaders.cpp.s
+.PHONY : src/shaders.s
+
+# target to generate assembly for a file
+src/shaders.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/src/shaders.cpp.s
+.PHONY : src/shaders.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,9 +288,18 @@ help:
 	@echo "... external/kissfft/kiss_fft.o"
 	@echo "... external/kissfft/kiss_fft.i"
 	@echo "... external/kissfft/kiss_fft.s"
+	@echo "... src/audio.o"
+	@echo "... src/audio.i"
+	@echo "... src/audio.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/renderer.o"
+	@echo "... src/renderer.i"
+	@echo "... src/renderer.s"
+	@echo "... src/shaders.o"
+	@echo "... src/shaders.i"
+	@echo "... src/shaders.s"
 .PHONY : help
 
 

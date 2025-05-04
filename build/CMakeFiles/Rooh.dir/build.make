@@ -86,10 +86,52 @@ CMakeFiles/Rooh.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Rooh.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kali/Rooh/src/main.cpp -o CMakeFiles/Rooh.dir/src/main.cpp.s
 
+CMakeFiles/Rooh.dir/src/audio.cpp.o: CMakeFiles/Rooh.dir/flags.make
+CMakeFiles/Rooh.dir/src/audio.cpp.o: /home/kali/Rooh/src/audio.cpp
+CMakeFiles/Rooh.dir/src/audio.cpp.o: CMakeFiles/Rooh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Rooh.dir/src/audio.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Rooh.dir/src/audio.cpp.o -MF CMakeFiles/Rooh.dir/src/audio.cpp.o.d -o CMakeFiles/Rooh.dir/src/audio.cpp.o -c /home/kali/Rooh/src/audio.cpp
+
+CMakeFiles/Rooh.dir/src/audio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Rooh.dir/src/audio.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kali/Rooh/src/audio.cpp > CMakeFiles/Rooh.dir/src/audio.cpp.i
+
+CMakeFiles/Rooh.dir/src/audio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Rooh.dir/src/audio.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kali/Rooh/src/audio.cpp -o CMakeFiles/Rooh.dir/src/audio.cpp.s
+
+CMakeFiles/Rooh.dir/src/renderer.cpp.o: CMakeFiles/Rooh.dir/flags.make
+CMakeFiles/Rooh.dir/src/renderer.cpp.o: /home/kali/Rooh/src/renderer.cpp
+CMakeFiles/Rooh.dir/src/renderer.cpp.o: CMakeFiles/Rooh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Rooh.dir/src/renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Rooh.dir/src/renderer.cpp.o -MF CMakeFiles/Rooh.dir/src/renderer.cpp.o.d -o CMakeFiles/Rooh.dir/src/renderer.cpp.o -c /home/kali/Rooh/src/renderer.cpp
+
+CMakeFiles/Rooh.dir/src/renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Rooh.dir/src/renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kali/Rooh/src/renderer.cpp > CMakeFiles/Rooh.dir/src/renderer.cpp.i
+
+CMakeFiles/Rooh.dir/src/renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Rooh.dir/src/renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kali/Rooh/src/renderer.cpp -o CMakeFiles/Rooh.dir/src/renderer.cpp.s
+
+CMakeFiles/Rooh.dir/src/shaders.cpp.o: CMakeFiles/Rooh.dir/flags.make
+CMakeFiles/Rooh.dir/src/shaders.cpp.o: /home/kali/Rooh/src/shaders.cpp
+CMakeFiles/Rooh.dir/src/shaders.cpp.o: CMakeFiles/Rooh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Rooh.dir/src/shaders.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Rooh.dir/src/shaders.cpp.o -MF CMakeFiles/Rooh.dir/src/shaders.cpp.o.d -o CMakeFiles/Rooh.dir/src/shaders.cpp.o -c /home/kali/Rooh/src/shaders.cpp
+
+CMakeFiles/Rooh.dir/src/shaders.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Rooh.dir/src/shaders.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kali/Rooh/src/shaders.cpp > CMakeFiles/Rooh.dir/src/shaders.cpp.i
+
+CMakeFiles/Rooh.dir/src/shaders.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Rooh.dir/src/shaders.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kali/Rooh/src/shaders.cpp -o CMakeFiles/Rooh.dir/src/shaders.cpp.s
+
 CMakeFiles/Rooh.dir/external/glad/glad.c.o: CMakeFiles/Rooh.dir/flags.make
 CMakeFiles/Rooh.dir/external/glad/glad.c.o: /home/kali/Rooh/external/glad/glad.c
 CMakeFiles/Rooh.dir/external/glad/glad.c.o: CMakeFiles/Rooh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Rooh.dir/external/glad/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Rooh.dir/external/glad/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Rooh.dir/external/glad/glad.c.o -MF CMakeFiles/Rooh.dir/external/glad/glad.c.o.d -o CMakeFiles/Rooh.dir/external/glad/glad.c.o -c /home/kali/Rooh/external/glad/glad.c
 
 CMakeFiles/Rooh.dir/external/glad/glad.c.i: cmake_force
@@ -103,7 +145,7 @@ CMakeFiles/Rooh.dir/external/glad/glad.c.s: cmake_force
 CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o: CMakeFiles/Rooh.dir/flags.make
 CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o: /home/kali/Rooh/external/kissfft/kiss_fft.c
 CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o: CMakeFiles/Rooh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o -MF CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o.d -o CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o -c /home/kali/Rooh/external/kissfft/kiss_fft.c
 
 CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.i: cmake_force
@@ -117,6 +159,9 @@ CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.s: cmake_force
 # Object files for target Rooh
 Rooh_OBJECTS = \
 "CMakeFiles/Rooh.dir/src/main.cpp.o" \
+"CMakeFiles/Rooh.dir/src/audio.cpp.o" \
+"CMakeFiles/Rooh.dir/src/renderer.cpp.o" \
+"CMakeFiles/Rooh.dir/src/shaders.cpp.o" \
 "CMakeFiles/Rooh.dir/external/glad/glad.c.o" \
 "CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o"
 
@@ -124,6 +169,9 @@ Rooh_OBJECTS = \
 Rooh_EXTERNAL_OBJECTS =
 
 Rooh: CMakeFiles/Rooh.dir/src/main.cpp.o
+Rooh: CMakeFiles/Rooh.dir/src/audio.cpp.o
+Rooh: CMakeFiles/Rooh.dir/src/renderer.cpp.o
+Rooh: CMakeFiles/Rooh.dir/src/shaders.cpp.o
 Rooh: CMakeFiles/Rooh.dir/external/glad/glad.c.o
 Rooh: CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o
 Rooh: CMakeFiles/Rooh.dir/build.make
@@ -132,7 +180,7 @@ Rooh: /usr/lib/x86_64-linux-gnu/libGL.so
 Rooh: /usr/lib/x86_64-linux-gnu/libglfw.so.3.4
 Rooh: /usr/lib/x86_64-linux-gnu/libopenal.so
 Rooh: CMakeFiles/Rooh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Rooh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Rooh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Rooh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

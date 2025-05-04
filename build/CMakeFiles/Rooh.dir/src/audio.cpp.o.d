@@ -1,8 +1,9 @@
-CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
- /usr/include/stdc-predef.h /home/kali/Rooh/external/glad/glad/glad.h \
- /usr/include/KHR/khrplatform.h \
- /usr/lib/gcc/x86_64-linux-gnu/14/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+CMakeFiles/Rooh.dir/src/audio.cpp.o: /home/kali/Rooh/src/audio.cpp \
+ /usr/include/stdc-predef.h /home/kali/Rooh/src/audio.h \
+ /usr/include/AL/al.h /usr/include/AL/alc.h /usr/include/c++/14/iostream \
+ /usr/include/c++/14/bits/requires_hosted.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
@@ -10,27 +11,18 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /usr/include/GLFW/glfw3.h \
- /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h \
- /usr/include/c++/14/iostream /usr/include/c++/14/bits/requires_hosted.h \
- /usr/include/x86_64-linux-gnu/c++/14/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/14/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/cpu_defines.h \
  /usr/include/c++/14/pstl/pstl_config.h /usr/include/c++/14/ostream \
  /usr/include/c++/14/ios /usr/include/c++/14/iosfwd \
  /usr/include/c++/14/bits/stringfwd.h \
  /usr/include/c++/14/bits/memoryfwd.h /usr/include/c++/14/bits/postypes.h \
  /usr/include/c++/14/cwchar /usr/include/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
@@ -52,7 +44,10 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
  /usr/include/x86_64-linux-gnu/c++/14/bits/c++locale.h \
  /usr/include/c++/14/clocale /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/14/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/c++/14/bits/ios_base.h /usr/include/c++/14/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/gthr.h \
@@ -118,7 +113,8 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
  /usr/include/c++/14/ext/string_conversions.h /usr/include/c++/14/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
@@ -156,8 +152,10 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
  /usr/include/c++/14/bits/basic_ios.tcc \
  /usr/include/c++/14/bits/ostream.tcc /usr/include/c++/14/istream \
  /usr/include/c++/14/bits/istream.tcc \
- /home/kali/Rooh/external/kissfft/kiss_fft.h /usr/include/c++/14/stdlib.h \
- /usr/include/c++/14/math.h /usr/include/c++/14/cmath /usr/include/math.h \
+ /home/kali/Rooh/src/../external/stb/stb_vorbis.c \
+ /usr/include/c++/14/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/assert.h /usr/include/c++/14/math.h \
+ /usr/include/c++/14/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -179,7 +177,13 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
  /usr/include/c++/14/tr1/modified_bessel_func.tcc \
  /usr/include/c++/14/tr1/poly_hermite.tcc \
  /usr/include/c++/14/tr1/poly_laguerre.tcc \
- /usr/include/c++/14/tr1/riemann_zeta.tcc /usr/include/string.h \
- /usr/include/strings.h /home/kali/Rooh/src/audio.h /usr/include/AL/al.h \
- /usr/include/AL/alc.h /home/kali/Rooh/src/renderer.h \
- /home/kali/Rooh/src/shaders.h /home/kali/Rooh/src/cleanup.h
+ /usr/include/c++/14/tr1/riemann_zeta.tcc \
+ /usr/lib/gcc/x86_64-linux-gnu/14/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/14/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /home/kali/Rooh/src/cleanup.h

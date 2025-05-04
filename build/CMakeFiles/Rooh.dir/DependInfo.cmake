@@ -10,7 +10,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kali/Rooh/external/glad/glad.c" "CMakeFiles/Rooh.dir/external/glad/glad.c.o" "gcc" "CMakeFiles/Rooh.dir/external/glad/glad.c.o.d"
   "/home/kali/Rooh/external/kissfft/kiss_fft.c" "CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o" "gcc" "CMakeFiles/Rooh.dir/external/kissfft/kiss_fft.c.o.d"
+  "/home/kali/Rooh/src/audio.cpp" "CMakeFiles/Rooh.dir/src/audio.cpp.o" "gcc" "CMakeFiles/Rooh.dir/src/audio.cpp.o.d"
   "/home/kali/Rooh/src/main.cpp" "CMakeFiles/Rooh.dir/src/main.cpp.o" "gcc" "CMakeFiles/Rooh.dir/src/main.cpp.o.d"
+  "/home/kali/Rooh/src/renderer.cpp" "CMakeFiles/Rooh.dir/src/renderer.cpp.o" "gcc" "CMakeFiles/Rooh.dir/src/renderer.cpp.o.d"
+  "/home/kali/Rooh/src/shaders.cpp" "CMakeFiles/Rooh.dir/src/shaders.cpp.o" "gcc" "CMakeFiles/Rooh.dir/src/shaders.cpp.o.d"
   "" "Rooh" "gcc" "CMakeFiles/Rooh.dir/link.d"
   )
 

@@ -85,12 +85,12 @@ clean: CMakeFiles/Rooh.dir/clean
 CMakeFiles/Rooh.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=1,2,3,4 "Built target Rooh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Rooh"
 .PHONY : CMakeFiles/Rooh.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Rooh.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kali/Rooh/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kali/Rooh/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Rooh.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kali/Rooh/build/CMakeFiles 0
 .PHONY : CMakeFiles/Rooh.dir/rule
@@ -102,7 +102,7 @@ Rooh: CMakeFiles/Rooh.dir/rule
 # codegen rule for target.
 CMakeFiles/Rooh.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rooh.dir/build.make CMakeFiles/Rooh.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target Rooh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/Rooh/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target Rooh"
 .PHONY : CMakeFiles/Rooh.dir/codegen
 
 # clean rule for target.
