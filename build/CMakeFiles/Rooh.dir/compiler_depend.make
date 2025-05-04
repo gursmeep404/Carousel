@@ -154,6 +154,8 @@ CMakeFiles/Rooh.dir/src/main.cpp.o: /home/kali/Rooh/src/main.cpp \
   /home/kali/Rooh/external/glad/glad/glad.h \
   /home/kali/Rooh/external/kissfft/kiss_fft.h \
   /home/kali/Rooh/external/stb/stb_vorbis.c \
+  /usr/include/AL/al.h \
+  /usr/include/AL/alc.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
@@ -541,6 +543,10 @@ Rooh: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/include/c++/14/bits/ostream.tcc:
 
+/usr/include/c++/14/bits/nested_exception.h:
+
+/usr/include/c++/14/bits/move.h:
+
 /usr/include/x86_64-linux-gnu/c++/14/bits/gthr-default.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
@@ -560,8 +566,6 @@ Rooh: /lib64/ld-linux-x86-64.so.2 \
 /usr/include/c++/14/bits/ptr_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/c++/14/bits/nested_exception.h:
 
 /usr/include/x86_64-linux-gnu/c++/14/bits/error_constants.h:
 
@@ -613,13 +617,9 @@ Rooh: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/c++/14/bits/move.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/features.h:
 
 /usr/include/c++/14/ostream:
 
@@ -682,6 +682,8 @@ Rooh: /lib64/ld-linux-x86-64.so.2 \
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/14/bits/memoryfwd.h:
+
+/usr/include/AL/al.h:
 
 /usr/include/c++/14/bits/basic_ios.h:
 
@@ -762,6 +764,10 @@ Rooh: /lib64/ld-linux-x86-64.so.2 \
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/features.h:
+
+/usr/include/AL/alc.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 

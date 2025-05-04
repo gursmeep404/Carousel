@@ -157,6 +157,8 @@ CMakeFiles/Rooh.dir/src/main.cpp.o
  /home/kali/Rooh/external/glad/glad/glad.h
  /home/kali/Rooh/external/kissfft/kiss_fft.h
  /home/kali/Rooh/external/stb/stb_vorbis.c
+ /usr/include/AL/al.h
+ /usr/include/AL/alc.h
  /usr/include/GLFW/glfw3.h
  /usr/include/KHR/khrplatform.h
  /usr/include/alloca.h
