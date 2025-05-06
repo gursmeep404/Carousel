@@ -151,19 +151,54 @@ glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 void cleanup() {
-    if (fftCfg) free(fftCfg);
-    if (fftInput) free(fftInput);
-    if (fftOutput) free(fftOutput);
-
-    for (int i = 0; i < numBars; ++i) {
-        glDeleteVertexArrays(1, &barVAO[i]);
-        glDeleteBuffers(1, &barVBO[i]);
+    if (fftCfg) {
+        free(fftCfg);
+        fftCfg = nullptr;
+    }
+    if (fftInput) {
+        free(fftInput);
+        fftInput = nullptr;
+    }
+    if (fftOutput) {
+        free(fftOutput);
+        fftOutput = nullptr;
     }
 
-    if (audioData) free(audioData);
-    alDeleteSources(1, &source);
-    alDeleteBuffers(1, &buffer);
-    alcMakeContextCurrent(nullptr);
-    alcDestroyContext(context);
-    alcCloseDevice(device);
+    for (int i = 0; i < numBars; ++i) {
+        if (barVAO[i]) {
+            glDeleteVertexArrays(1, &barVAO[i]);
+            barVAO[i] = 0;
+        }
+        if (barVBO[i]) {
+            glDeleteBuffers(1, &barVBO[i]);
+            barVBO[i] = 0;
+        }
+    }
+
+    if (audioData) {
+        free(audioData);
+        audioData = nullptr;
+    }
+
+    if (source) {
+        alDeleteSources(1, &source);
+        source = 0;
+    }
+
+    if (buffer) {
+        alDeleteBuffers(1, &buffer);
+        buffer = 0;
+    }
+
+    if (context) {
+        alcMakeContextCurrent(nullptr);
+        alcDestroyContext(context);
+        context = nullptr;
+    }
+
+    if (device) {
+        alcCloseDevice(device);
+        device = nullptr;
+    }
+
 }
