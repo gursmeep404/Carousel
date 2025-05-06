@@ -18,7 +18,7 @@ int main() {
         return -1;
     }
 
-    window = glfwCreateWindow(800, 600, "Audio Visualizer", nullptr, nullptr);
+    window = glfwCreateWindow(1600, 900, "Audio Visualizer", nullptr, nullptr);
     if (!window) {
         std::cerr << "Window creation failed\n";
         glfwTerminate();
@@ -31,17 +31,24 @@ int main() {
     initOpenGL();
     createShaders();
     setupBars();
+    setupBaseCircle();
+    renderBaseCircle();
     loadAudio("../assets/willow.ogg");
     initOpenAL();
     playAudio();
 
     while (!glfwWindowShouldClose(window)) {
-        processAudioFrame();
-        renderScene();
+    processAudioFrame();
+    float time = glfwGetTime();
 
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
+    glUseProgram(shaderProgram);
+    glUniform1f(glGetUniformLocation(shaderProgram, "time"), time);
+
+    renderScene();
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+}
 
     cleanup();
     return 0;

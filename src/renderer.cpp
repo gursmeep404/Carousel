@@ -4,6 +4,7 @@
 #include <kiss_fft.h>
 #include <iostream>
 #include <cmath>
+#include <vector>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -19,6 +20,11 @@ const int numBars = fftSize / 2;
 GLuint barVAO[numBars], barVBO[numBars];
 float barHeights[numBars] = {0};
 
+GLuint baseCircleVAO, baseCircleVBO;
+float baseCircleRadius = 5.0f;
+const int circleSegments = 100;
+float baseCircleVertices[(circleSegments + 2) * 3];  // +2 for center and first vertex of the circle
+
 kiss_fft_cfg fftCfg;
 kiss_fft_cpx* fftInput;
 kiss_fft_cpx* fftOutput;
@@ -29,7 +35,7 @@ void initOpenGL() {
         exit(-1);
     }
     glEnable(GL_DEPTH_TEST);
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, 1600, 900);
 }
 
 void setupBars() {
@@ -38,6 +44,56 @@ void setupBars() {
         glGenBuffers(1, &barVBO[i]);
     }
 }
+
+void setupBaseCircle() {
+    float radius = 2.0f;
+    int segments = 100;
+
+    std::vector<float> vertices;
+
+    // Center vertex (at origin in XZ plane)
+    vertices.push_back(0.0f); // X
+    vertices.push_back(0.0f); // Y (height)
+    vertices.push_back(0.0f); // Z
+
+    for (int i = 0; i <= segments; ++i) {
+        float angle = (i / float(segments)) * 2.0f * M_PI;
+        float x = radius * cos(angle);
+        float z = radius * sin(angle);
+        float y = 0.0f; // Flat on X-Z plane
+        vertices.push_back(x);
+        vertices.push_back(y);
+        vertices.push_back(z);
+    }
+
+    glGenVertexArrays(1, &baseCircleVAO);
+    glGenBuffers(1, &baseCircleVBO);
+
+    glBindVertexArray(baseCircleVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, baseCircleVBO);
+    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+}
+
+
+
+void renderBaseCircle() {
+    glm::mat4 rotation = glm::rotate(glm::mat4(1.0f), (float)glfwGetTime() * 0.5f, glm::vec3(0.0f, 0.0f, 1.0f));
+
+    GLuint transformLoc = glGetUniformLocation(shaderProgram, "model");
+    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(rotation));
+
+    glBindVertexArray(baseCircleVAO);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 1 + 100 + 1); // center + segments + repeat of first outer vertex
+    glBindVertexArray(0);
+}
+
+
 
 void processAudioFrame() {
     if (!fftCfg)
@@ -67,6 +123,8 @@ void processAudioFrame() {
 }
 
 void renderScene() {
+
+
     glClearColor(0.0f, 0.0f, 0.0f, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(shaderProgram);
@@ -75,7 +133,7 @@ void renderScene() {
     float time = glfwGetTime();
     glm::vec3 camPos = glm::vec3(10.0f * sin(time * 0.5f), 5.0f, 10.0f * cos(time * 0.5f));
     glm::mat4 view = glm::lookAt(camPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.f / 600.f, 0.1f, 100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1600.f/900.f, 0.1f, 100.0f);
 
     GLint modelLoc = glGetUniformLocation(shaderProgram, "model");
     GLint viewLoc = glGetUniformLocation(shaderProgram, "view");
@@ -84,6 +142,13 @@ void renderScene() {
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
+    // Render the base circle
+    glm::mat4 model = glm::mat4(1.0f);
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+    glBindVertexArray(baseCircleVAO);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, circleSegments + 2);
+
+    // Render the bars
     for (int i = 0; i < numBars; ++i) {
         float angle = (2.0f * M_PI / numBars) * i;
         float radius = 5.0f;
@@ -95,33 +160,30 @@ void renderScene() {
         float d = 0.05f; // depth
 
         float vertices[] = {
-    // positions (12 triangles * 3 vertices = 36 vertices)
+            // Front face
+            -w, 0.0f,  d,   w, 0.0f,  d,   w, h, d,
+            -w, 0.0f,  d,   w, h,  d,  -w, h, d,
 
-    // Front face
-    -w, 0.0f,  d,   w, 0.0f,  d,   w, h, d,
-    -w, 0.0f,  d,   w, h,  d,  -w, h, d,
+            // Back face
+            -w, 0.0f, -d,  -w, h, -d,   w, h, -d,
+            -w, 0.0f, -d,   w, h, -d,   w, 0.0f, -d,
 
-    // Back face
-    -w, 0.0f, -d,  -w, h, -d,   w, h, -d,
-    -w, 0.0f, -d,   w, h, -d,   w, 0.0f, -d,
+            // Left face
+            -w, 0.0f,  d,  -w, h,  d,  -w, h, -d,
+            -w, 0.0f,  d,  -w, h, -d,  -w, 0.0f, -d,
 
-    // Left face
-    -w, 0.0f,  d,  -w, h,  d,  -w, h, -d,
-    -w, 0.0f,  d,  -w, h, -d,  -w, 0.0f, -d,
+            // Right face
+             w, 0.0f,  d,   w, 0.0f, -d,   w, h, -d,
+             w, 0.0f,  d,   w, h, -d,   w, h,  d,
 
-    // Right face
-     w, 0.0f,  d,   w, 0.0f, -d,   w, h, -d,
-     w, 0.0f,  d,   w, h, -d,   w, h,  d,
+            // Top face
+            -w, h,  d,   w, h,  d,   w, h, -d,
+            -w, h,  d,   w, h, -d,  -w, h, -d,
 
-    // Top face
-    -w, h,  d,   w, h,  d,   w, h, -d,
-    -w, h,  d,   w, h, -d,  -w, h, -d,
-
-    // Bottom face
-    -w, 0.0f,  d,  -w, 0.0f, -d,   w, 0.0f, -d,
-    -w, 0.0f,  d,   w, 0.0f, -d,   w, 0.0f,  d
-};
-
+            // Bottom face
+            -w, 0.0f,  d,  -w, 0.0f, -d,   w, 0.0f, -d,
+            -w, 0.0f,  d,   w, 0.0f, -d,   w, 0.0f,  d
+        };
 
         GLuint indices[] = {
             0, 1, 2, 2, 3, 0, // Front
@@ -132,21 +194,20 @@ void renderScene() {
             0, 4, 7, 7, 1, 0  // Bottom
         };
 
-        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(x, 0.0f, z));
         model = glm::rotate(model, -angle, glm::vec3(0, 1, 0));
 
         glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
         glBindVertexArray(barVAO[i]);
-glBindBuffer(GL_ARRAY_BUFFER, barVBO[i]);
-glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, barVBO[i]);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
-glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-glEnableVertexAttribArray(0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+        glEnableVertexAttribArray(0);
 
-glDrawArrays(GL_TRIANGLES, 0, 36);
-
+        glDrawArrays(GL_TRIANGLES, 0, 36);
     }
 }
 
@@ -200,5 +261,5 @@ void cleanup() {
         alcCloseDevice(device);
         device = nullptr;
     }
-
 }
+

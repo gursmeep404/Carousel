@@ -5,6 +5,8 @@ void initOpenGL();
 void setupBars();
 void processAudioFrame();
 void renderScene();
+void setupBaseCircle();
+void renderBaseCircle();
 
 #endif // RENDERER_H
 
