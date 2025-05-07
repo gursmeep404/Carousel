@@ -33,7 +33,7 @@ int main() {
     setupBars();
     setupBaseCircle();
     renderBaseCircle();
-    loadAudio("../assets/willow.ogg");
+    loadAudio("../assets/amaran.ogg");
     initOpenAL();
     playAudio();
 
