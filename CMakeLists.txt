@@ -28,5 +28,5 @@ add_executable(Rooh
 )
 
 # Link libraries to the executable
-target_link_libraries(Rooh PRIVATE OpenGL::GL glfw OpenAL::OpenAL dl)
+target_link_libraries(carousel PRIVATE OpenGL::GL glfw OpenAL::OpenAL dl)
 

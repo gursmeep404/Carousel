@@ -18,7 +18,7 @@ int main() {
         return -1;
     }
 
-    window = glfwCreateWindow(1600, 900, "Audio Visualizer", nullptr, nullptr);
+    window = glfwCreateWindow(1600, 900, "Carousel", nullptr, nullptr);
     if (!window) {
         std::cerr << "Window creation failed\n";
         glfwTerminate();
@@ -33,7 +33,7 @@ int main() {
     setupBars();
     setupBaseCircle();
     renderBaseCircle();
-    loadAudio("../assets/amaran.ogg");
+    loadAudio("../assets/willow.ogg");
     initOpenAL();
     playAudio();
 
