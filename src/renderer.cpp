@@ -146,7 +146,7 @@ void processAudioFrame() {
 
 
 void renderScene() {
-    glClearColor(0.0f, 0.0f, 0.0f, 1);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.05f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(shaderProgram);
 
@@ -231,8 +231,11 @@ void renderScene() {
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
 
-    // Update and render particles
-    float deltaTime = 0.016f;  // Example deltaTime, use actual deltaTime in your game loop
+static float lastTime = glfwGetTime();
+float currentTime = glfwGetTime();
+float deltaTime = currentTime - lastTime;
+lastTime = currentTime;
+
     particleSystem.update(deltaTime);
     particleSystem.render();
 }
