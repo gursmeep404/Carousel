@@ -92,3 +92,8 @@ sudo apt-get install libglfw3-dev libopenal-dev libglm-dev
 ## Screenshots
 
 ![Screenshots](./images/gif1.gif "screenshots")
+
+
+ **📌 Note:**  
+ The `assets` folder contains two sample audio files for testing. By default, one of these will play when you run the application.  
+ To use your own audio file, open the `main.cpp` file in the `src` directory and update the file name in the `loadAudio()` function accordingly.
