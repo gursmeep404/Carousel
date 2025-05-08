@@ -1,1 +1,1 @@
-![Project Logo](./images/carousel.png)
+![Project Logo](./images/Carousel.png)
