@@ -119,26 +119,17 @@ void processAudioFrame() {
 
     kiss_fft(fftCfg, fftInput, fftOutput);
 
-    float bassSum = 0.0f;
-    int bassBins = 10;  // Use first 10 bins for bass
-    for (int i = 0; i < numBars; ++i) {
+	 for (int i = 0; i < numBars; ++i) {
         float magnitude = sqrt(fftOutput[i].r * fftOutput[i].r + fftOutput[i].i * fftOutput[i].i);
-        barHeights[i] = std::min(magnitude / 5000.0f, 3.0f);
-
-        if (i < bassBins) {
-            bassSum += magnitude;
-        }
-
-        // Emit particles if bar height exceeds threshold
+        barHeights[i] = std::min(magnitude / 5000.0f, 3.0f); // Cap height to prevent overflow
+          // Emit particles if bar height exceeds threshold
         if (barHeights[i] > threshold) {
             glm::vec3 pos = glm::vec3(i * 1.5f, 0.0f, barHeights[i]);  // Position based on index and height
             glm::vec3 vel = glm::vec3(0.0f, 1.0f, 0.0f) * barHeights[i] * 0.5f;  // Example velocity
             particleSystem.emit(pos, vel);
         }
     }
-    
-    float avgBass = bassSum / bassBins;
-    bassAmplitude = 1.0f + std::min(avgBass / 10000.0f, 0.3f);  // Slight pulsing scale
+
 
     playbackIndex += fftSize / 2;
 }
