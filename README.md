@@ -7,9 +7,8 @@ Carousel is a real-time audio visualiser built with **OpenGL** and **C++**. The 
 - [Features](#features)
 - [Installation](#installation)
     - [Dependencies](#dependencies)
-    - [Building the Project](#build)
+    - [Building the Project](#building-the-project)
 - [Screenshots](#screenshots)
-- [License](#license)
 
 ## Features
 
@@ -92,3 +91,4 @@ sudo apt-get install libglfw3-dev libopenal-dev libglm-dev
 
 ## Screenshots
 
+![Screenshots]("./images/gif1.gif" "screenshots")
