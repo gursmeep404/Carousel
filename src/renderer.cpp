@@ -11,14 +11,20 @@
 #include "shaders.h"
 #include "audio.h"
 #include "cleanup.h"
+#include "particles.h"
 
 extern GLuint shaderProgram;
 extern GLFWwindow* window;
+
+ParticleSystem particleSystem(1000);
 
 const int fftSize = 512;
 const int numBars = fftSize / 2;
 GLuint barVAO[numBars], barVBO[numBars];
 float barHeights[numBars] = {0};
+
+float bassAmplitude = 1.0f;  // Base scale
+
 
 GLuint baseCircleVAO, baseCircleVBO;
 float baseCircleRadius = 5.0f;
@@ -93,9 +99,8 @@ void renderBaseCircle() {
     glBindVertexArray(0);
 }
 
-
-
 void processAudioFrame() {
+  static float threshold = 1.5f;
     if (!fftCfg)
         fftCfg = kiss_fft_alloc(fftSize, 0, nullptr, nullptr);
 
@@ -114,17 +119,33 @@ void processAudioFrame() {
 
     kiss_fft(fftCfg, fftInput, fftOutput);
 
+    float bassSum = 0.0f;
+    int bassBins = 10;  // Use first 10 bins for bass
     for (int i = 0; i < numBars; ++i) {
         float magnitude = sqrt(fftOutput[i].r * fftOutput[i].r + fftOutput[i].i * fftOutput[i].i);
-        barHeights[i] = std::min(magnitude / 5000.0f, 3.0f); // Cap height to prevent overflow
+        barHeights[i] = std::min(magnitude / 5000.0f, 3.0f);
+
+        if (i < bassBins) {
+            bassSum += magnitude;
+        }
+
+        // Emit particles if bar height exceeds threshold
+        if (barHeights[i] > threshold) {
+            glm::vec3 pos = glm::vec3(i * 1.5f, 0.0f, barHeights[i]);  // Position based on index and height
+            glm::vec3 vel = glm::vec3(0.0f, 1.0f, 0.0f) * barHeights[i] * 0.5f;  // Example velocity
+            particleSystem.emit(pos, vel);
+        }
     }
+    
+    float avgBass = bassSum / bassBins;
+    bassAmplitude = 1.0f + std::min(avgBass / 10000.0f, 0.3f);  // Slight pulsing scale
 
     playbackIndex += fftSize / 2;
 }
 
+
+
 void renderScene() {
-
-
     glClearColor(0.0f, 0.0f, 0.0f, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(shaderProgram);
@@ -142,8 +163,8 @@ void renderScene() {
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-    // Render the base circle
-    glm::mat4 model = glm::mat4(1.0f);
+    // Render the base circle with bass scale
+    glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(bassAmplitude));
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
     glBindVertexArray(baseCircleVAO);
     glDrawArrays(GL_TRIANGLE_FAN, 0, circleSegments + 2);
@@ -209,6 +230,11 @@ void renderScene() {
 
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
+
+    // Update and render particles
+    float deltaTime = 0.016f;  // Example deltaTime, use actual deltaTime in your game loop
+    particleSystem.update(deltaTime);
+    particleSystem.render();
 }
 
 void cleanup() {

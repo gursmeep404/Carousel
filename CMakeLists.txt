@@ -22,6 +22,7 @@ add_executable(carousel
     src/audio.cpp
     src/renderer.cpp
     src/shaders.cpp
+    src/particles.cpp
     external/glad/glad.c 
     external/kissfft/kiss_fft.c 
 
