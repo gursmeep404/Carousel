@@ -38,16 +38,16 @@ Carousel is a real-time audio visualiser built with **OpenGL** and **C++**. The 
 ### Dependencies
 The project includes the required libraries in the `externals/` directory, so you do not need to manually download them. This makes the setup process simpler for users. The external libraries bundled are:
 
-- *GLFW*: A library for creating windows with OpenGL contexts and handling user input.
-- *GLAD*: An OpenGL loader to manage extensions.
-- *KissFFT*: A lightweight FFT library used for real-time frequency analysis.
-- *STB*: A header-only library for decoding Ogg Vorbis files into raw audio data.
+- **GLFW**: A library for creating windows with OpenGL contexts and handling user input.
+- **GLAD**: An OpenGL loader to manage extensions.
+- **KissFFT**: A lightweight FFT library used for real-time frequency analysis.
+- **STB**: A header-only library for decoding Ogg Vorbis files into raw audio data.
 
 If you'd like to modify or update these dependencies, you can replace the respective folders in the `externals/` directory.
 
 In addition to the bundled libraries, the project requires the following system packages to function properly:
-- *OpenGL* : Graphics rendering library
-- *OpenAL* : Used for audio playback
+- **OpenGL** : Graphics rendering library
+- **OpenAL** : Used for audio playback
 
 On Ubuntu-based systems (or other Linux distributions using `apt`), you can install the required dependencies with the following command:
 
@@ -88,4 +88,7 @@ sudo apt-get install libglfw3-dev libopenal-dev libglm-dev
     ```bash
     ./carousel
     ```    
+
+
+## Screenshots
 

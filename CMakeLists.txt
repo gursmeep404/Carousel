@@ -17,7 +17,7 @@ find_package(glfw3 REQUIRED)
 find_package(OpenAL REQUIRED)
 
 # Add executable
-add_executable(Rooh 
+add_executable(carousel 
     src/main.cpp 
     src/audio.cpp
     src/renderer.cpp
