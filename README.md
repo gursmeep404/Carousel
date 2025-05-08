@@ -1,17 +1,14 @@
 ![Project Logo](./images/Carousel.png "carousel")
 Carousel is a real-time audio visualiser built with **OpenGL** and **C++**. The audio's frequency spectrum is captured using **Fast Fourier Transform (FFT)** and visualised using a rotating audio ring where the bars on the outer surface pulse with the sound.
 
-
-
 ## Table of Contents
+
 - [Features](#features)
 - [Installation](#installation)
-    -[Dependencies](#dependencies)
-    -[Building the project](#build)
+    * [Dependencies](#dependencies)
+    * [Building the project](#build)
 - [Screenshots](#screenshots)
 - [License](#license)
-
-
 
 ## Features
 
@@ -41,9 +38,3 @@ Carousel is a real-time audio visualiser built with **OpenGL** and **C++**. The 
 
 - 🧱 **GLAD for OpenGL Function Loading**  
   Handles OpenGL function pointers, allowing you to use modern OpenGL functions without boilerplate.
-
-
-
-
-
-
