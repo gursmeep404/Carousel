@@ -1,6 +1,6 @@
 #include "particles.h"
 #include <algorithm>
-#include <GL/gl.h> // or glad/gl.h depending on your setup
+#include <GL/gl.h> 
 #include <cstdlib>
 #include <cmath>
 

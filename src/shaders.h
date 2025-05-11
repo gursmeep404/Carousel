@@ -9,5 +9,5 @@ extern GLuint shaderProgram;
 
 void createShaders();
 
-#endif // SHADERS_H
+#endif
 

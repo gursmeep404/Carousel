@@ -21,6 +21,10 @@ Carousel is a real-time audio visualiser built with **OpenGL** and **C++**. The 
 - 🔊 **OpenAL Audio Playback**  
   Streams and plays audio using OpenAL while simultaneously feeding it to the visualizer.
 
+- 🌌 **Particle System**  
+  A swirling particle system animates around the audio ring, simulating glowing orbs that spiral it.
+
+
 - ⚡ **Fast Fourier Transform (FFT)**  
   Uses KissFFT (a lightweight FFT library) to convert time-domain audio into frequency-domain data in real time.
 

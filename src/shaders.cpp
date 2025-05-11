@@ -39,7 +39,7 @@ void main() {
 
 
 
-// In main.cpp
+
 GLuint shaderProgram;
 
 // Function to create shaders

@@ -16,7 +16,7 @@ int playbackIndex = 0;
 int channels = 0;
 
 void initOpenAL() {
-    device = alcOpenDevice(nullptr); // Default device
+    device = alcOpenDevice(nullptr); 
     if (!device) {
         std::cerr << "Failed to open OpenAL device\n";
         return;

@@ -23,7 +23,7 @@ const int numBars = fftSize / 2;
 GLuint barVAO[numBars], barVBO[numBars];
 float barHeights[numBars] = {0};
 
-float bassAmplitude = 1.0f;  // Base scale
+float bassAmplitude = 1.0f;  
 
 
 GLuint baseCircleVAO, baseCircleVBO;
@@ -121,11 +121,11 @@ void processAudioFrame() {
 
 	 for (int i = 0; i < numBars; ++i) {
         float magnitude = sqrt(fftOutput[i].r * fftOutput[i].r + fftOutput[i].i * fftOutput[i].i);
-        barHeights[i] = std::min(magnitude / 5000.0f, 3.0f); // Cap height to prevent overflow
+        barHeights[i] = std::min(magnitude / 5000.0f, 3.0f); 
           // Emit particles if bar height exceeds threshold
         if (barHeights[i] > threshold) {
-            glm::vec3 pos = glm::vec3(i * 1.5f, 0.0f, barHeights[i]);  // Position based on index and height
-            glm::vec3 vel = glm::vec3(0.0f, 1.0f, 0.0f) * barHeights[i] * 0.5f;  // Example velocity
+            glm::vec3 pos = glm::vec3(i * 1.5f, 0.0f, barHeights[i]);  
+            glm::vec3 vel = glm::vec3(0.0f, 1.0f, 0.0f) * barHeights[i] * 0.5f; 
             particleSystem.emit(pos, vel);
         }
     }

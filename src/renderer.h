@@ -8,5 +8,4 @@ void renderScene();
 void setupBaseCircle();
 void renderBaseCircle();
 
-#endif // RENDERER_H
-
+#endif 
