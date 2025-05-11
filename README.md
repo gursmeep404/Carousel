@@ -91,7 +91,7 @@ sudo apt-get install libglfw3-dev libopenal-dev libglm-dev
 
 ## Screenshots
 
-![Screenshots](./images/gif1.gif "screenshots")
+![Screenshots](./images/carousel_scene.gif "screenshots")
 
 
  **📌 Note:**  
